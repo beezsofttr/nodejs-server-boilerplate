@@ -1,8 +1,8 @@
-import { beeServer } from './libs';
+import { beeServer, prisma } from './libs';
 
 const app = async () => {
   console.log('[NETWORK APP]\tSTARTING');
-  // await prisma.$connect();
+  await prisma.$connect();
   console.log('[POSTGRESQL]\tSuccessfully connected to the database');
 
   await beeServer();
