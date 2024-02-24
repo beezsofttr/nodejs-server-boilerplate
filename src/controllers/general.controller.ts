@@ -31,10 +31,7 @@ const listWithSelectedCustomerHandler = async (req: Request, res: Response, next
 
 const listCustomerHandler = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const data = await prisma.customers.findMany({
-      where: {},
-      select: {},
-    });
+    const data = await prisma.customers.findMany({});
 
     return res.status(HTTP_STATUS_CODE.OK).send(data);
   } catch (error) {
